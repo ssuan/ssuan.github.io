@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포트폴리오</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        section {
+            background: white;
+            margin: 30px 0;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        section h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 2em;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        .project, .skill {
+            margin-bottom: 30px;
+        }
+        
+        .project h3, .skill h3 {
+            color: #764ba2;
+            margin: 15px 0 10px 0;
+        }
+        
+        .project p, .skill p {
+            color: #666;
+            line-height: 1.8;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+        }
+        
+        .skill-tag {
+            background: #e8eaf6;
+            color: #667eea;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: 500;
+        }
+        
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+        
+        a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>포트폴리오</h1>
+        <p>웹 개발자</p>
+    </header>
+    
+    <div class="container">
+        <section id="about">
+            <h2>소개</h2>
+            <p>
+                안녕하세요! 저는 웹 개발에 열정을 가진 개발자입니다.
+                최신 기술을 활용하여 사용자 중심의 웹 애플리케이션을 만들기 위해 노력하고 있습니다.
+            </p>
+        </section>
+        
+        <section id="projects">
+            <h2>프로젝트</h2>
+            <div class="project">
+                <h3>프로젝트 1</h3>
+                <p>프로젝트 설명을 입력하세요.</p>
+            </div>
+            <div class="project">
+                <h3>프로젝트 2</h3>
+                <p>프로젝트 설명을 입력하세요.</p>
+            </div>
+        </section>
+        
+        <section id="skills">
+            <h2>기술 스택</h2>
+            <div class="skills-grid">
+                <div class="skill-tag">HTML/CSS</div>
+                <div class="skill-tag">JavaScript</div>
+                <div class="skill-tag">React</div>
+                <div class="skill-tag">Node.js</div>
+                <div class="skill-tag">Git</div>
+            </div>
+        </section>
+        
+        <section id="contact">
+            <h2>연락처</h2>
+            <p>
+                이메일: <a href="mailto:your-email@example.com">your-email@example.com</a><br>
+                GitHub: <a href="https://github.com/ssuan">github.com/ssuan</a>
+            </p>
+        </section>
+    </div>
+    
+    <footer>
+        <p>&copy; 2024 포트폴리오. 모든 권리 보유.</p>
+    </footer>
+</body>
+</html>
