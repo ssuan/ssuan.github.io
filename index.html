@@ -1,158 +1,361 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>포트폴리오</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f4f4f4;
-        }
-        
-        header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 60px 20px;
-            text-align: center;
-        }
-        
-        header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
-        
-        header p {
-            font-size: 1.2em;
-            opacity: 0.9;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        section {
-            background: white;
-            margin: 30px 0;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        
-        section h2 {
-            color: #667eea;
-            margin-bottom: 20px;
-            font-size: 2em;
-            border-bottom: 2px solid #667eea;
-            padding-bottom: 10px;
-        }
-        
-        .project, .skill {
-            margin-bottom: 30px;
-        }
-        
-        .project h3, .skill h3 {
-            color: #764ba2;
-            margin: 15px 0 10px 0;
-        }
-        
-        .project p, .skill p {
-            color: #666;
-            line-height: 1.8;
-        }
-        
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 15px;
-        }
-        
-        .skill-tag {
-            background: #e8eaf6;
-            color: #667eea;
-            padding: 10px 15px;
-            border-radius: 5px;
-            text-align: center;
-            font-weight: 500;
-        }
-        
-        footer {
-            background: #333;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-        }
-        
-        a {
-            color: #667eea;
-            text-decoration: none;
-        }
-        
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>포트폴리오</h1>
-        <p>웹 개발자</p>
-    </header>
-    
-    <div class="container">
-        <section id="about">
-            <h2>소개</h2>
-            <p>
-                안녕하세요! 저는 웹 개발에 열정을 가진 개발자입니다.
-                최신 기술을 활용하여 사용자 중심의 웹 애플리케이션을 만들기 위해 노력하고 있습니다.
-            </p>
-        </section>
-        
-        <section id="projects">
-            <h2>프로젝트</h2>
-            <div class="project">
-                <h3>프로젝트 1</h3>
-                <p>프로젝트 설명을 입력하세요.</p>
-            </div>
-            <div class="project">
-                <h3>프로젝트 2</h3>
-                <p>프로젝트 설명을 입력하세요.</p>
-            </div>
-        </section>
-        
-        <section id="skills">
-            <h2>기술 스택</h2>
-            <div class="skills-grid">
-                <div class="skill-tag">HTML/CSS</div>
-                <div class="skill-tag">JavaScript</div>
-                <div class="skill-tag">React</div>
-                <div class="skill-tag">Node.js</div>
-                <div class="skill-tag">Git</div>
-            </div>
-        </section>
-        
-        <section id="contact">
-            <h2>연락처</h2>
-            <p>
-                이메일: <a href="mailto:your-email@example.com">your-email@example.com</a><br>
-                GitHub: <a href="https://github.com/ssuan">github.com/ssuan</a>
-            </p>
-        </section>
+<title>백엔드 엔지니어 포트폴리오 · 공개용</title>
+<style>
+  :root{
+    --ink:#131417; --paper:#F4F3EF; --card:#FCFBF9; --line:#DED9CF;
+    --muted:#5E5B54; --faint:#928D82;
+    --accent:#E5531B; --accent-ink:#B23C0E; --accent-soft:#FBEADF;
+    --graphite:#2A2C30;
+    --mono:"SF Mono",ui-monospace,"JetBrains Mono","Menlo",monospace;
+    --sans:"Pretendard","Apple SD Gothic Neo",system-ui,-apple-system,"Segoe UI","Malgun Gothic",sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);
+    line-height:1.7;-webkit-font-smoothing:antialiased;font-size:16px}
+  .wrap{max-width:900px;margin:0 auto;padding:0 30px}
+  a{color:var(--accent-ink);text-decoration:none;border-bottom:1px solid #E9C4AF}
+  h1,h2,h3{text-wrap:balance;line-height:1.22;margin:0}
+  code{font-family:var(--mono);font-size:.85em;background:#EEEAE1;padding:1px 5px;border-radius:4px}
+  .mono{font-family:var(--mono)}
+
+  .hint{background:var(--ink);color:#F4F3EF;font-size:13px;text-align:center;
+    padding:9px 16px;letter-spacing:.01em}
+  .hint b{color:var(--accent)}
+
+  /* ---------- Hero ---------- */
+  .hero{padding:56px 0 40px;position:relative}
+  .coord{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;
+    color:var(--faint);display:flex;gap:16px;flex-wrap:wrap;
+    padding-bottom:18px;border-bottom:2px solid var(--ink);margin-bottom:26px}
+  .coord b{color:var(--accent-ink)}
+  .hero h1{font-size:36px;font-weight:800;letter-spacing:-.02em}
+  .hero .hlsub{margin-top:8px;font-size:23px;font-weight:800;letter-spacing:-.01em;color:var(--accent-ink)}
+  .hero .role{margin-top:14px;font-size:16px;color:var(--muted);font-weight:500;max-width:62ch}
+  .lead{margin-top:22px;font-size:16px;color:#37342E;max-width:66ch}
+  .lead b{color:var(--ink);font-weight:700}
+  .gloss{margin-top:22px;padding-top:15px;border-top:1px solid var(--line);font-size:12px;color:var(--faint);line-height:1.7}
+  .gloss b{color:var(--muted);font-weight:700;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;margin-right:8px}
+  .meta{margin-top:26px;display:flex;flex-wrap:wrap;gap:8px}
+  .chip{background:var(--card);border:1px solid var(--line);border-radius:7px;
+    padding:5px 12px;color:#413E38;font-weight:600;font-size:13.5px}
+  .chip.k{background:var(--ink);border-color:var(--ink);color:#F4F3EF}
+  .chip.mono{font-family:var(--mono);font-size:12.5px;font-weight:500}
+
+  /* ---------- Section frame ---------- */
+  section{padding:44px 0;border-top:1px solid var(--line)}
+  .sec-label{display:flex;align-items:center;gap:12px;margin-bottom:26px}
+  .sec-label .no{font-family:var(--mono);font-size:12px;color:var(--accent);font-weight:600}
+  .sec-label h2{font-size:13px;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--ink);font-weight:800;white-space:nowrap}
+  .sec-label .rule{height:2px;background:var(--ink);flex:1;opacity:.12}
+
+  /* ---------- Highlight cards ---------- */
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;
+    padding:19px;position:relative;overflow:hidden}
+  .card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--accent)}
+  .card .num{font-size:16px;font-weight:800;letter-spacing:-.01em;line-height:1.3;color:var(--ink)}
+  .card .cap{margin-top:8px;font-size:12.5px;color:var(--muted);font-weight:500;line-height:1.55}
+  .card .cap b{color:#37342E;font-weight:600}
+
+  /* ---------- Skills ---------- */
+  .skills{display:grid;grid-template-columns:150px 1fr;gap:11px 24px;font-size:14.5px}
+  .skills dt{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--accent-ink);
+    text-transform:uppercase;letter-spacing:.03em;padding-top:2px}
+  .skills dd{margin:0;color:#37342E}
+  .skills .lead-skill dt{color:var(--accent)}
+
+  /* ---------- Project ---------- */
+  .proj{background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:26px;margin-bottom:14px}
+  .proj.flag{border-color:#E7C9B7}
+  .proj h3{font-size:19.5px;font-weight:800;letter-spacing:-.01em}
+  .proj .sub{margin-top:5px;color:var(--faint);font-size:12.5px;font-family:var(--mono)}
+  .proj .body{margin-top:15px;font-size:14.5px;color:#37342E}
+  .proj .body p{margin:0 0 10px}
+  .proj .body strong{color:var(--ink);font-weight:700}
+  .tags{margin-top:14px;display:flex;flex-wrap:wrap;gap:6px}
+  .tag{font-family:var(--mono);font-size:11.5px;color:var(--muted);background:#EEEAE1;
+    border-radius:5px;padding:3px 8px}
+
+  /* ---------- before/after bars ---------- */
+  .evidence{margin-top:16px;background:#F7F3EC;border:1px dashed #D8CFBF;border-radius:10px;padding:16px 16px 14px}
+  .evidence .cap{font-family:var(--mono);font-size:11px;color:var(--faint);text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px}
+  .bars{display:grid;gap:15px}
+  .bar-head{display:flex;justify-content:space-between;align-items:baseline;font-size:12.5px;margin-bottom:6px}
+  .bar-head .name{font-weight:700;color:var(--ink)}
+  .bar-head .cut{font-family:var(--mono);font-weight:700;font-size:12.5px;color:#fff;
+    background:var(--accent);padding:2px 8px;border-radius:6px}
+  .track{display:grid;gap:5px}
+  .barwrap{background:#E7E2D8;border-radius:6px;overflow:hidden}
+  .b{display:flex;align-items:center;gap:9px;font-size:12px;color:#fff;
+    height:25px;padding:0 11px;white-space:nowrap;font-weight:700;
+    font-variant-numeric:tabular-nums;min-width:max-content;border-radius:6px}
+  .b.before{background:var(--graphite)}
+  .b.after{background:var(--accent)}
+  .b .t{font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.1em;opacity:.72;text-transform:uppercase}
+
+  /* ---------- rows ---------- */
+  .rows{display:grid;gap:15px}
+  .row{display:grid;grid-template-columns:128px 1fr;gap:20px;font-size:14.5px;align-items:start}
+  .row .k{font-family:var(--mono);font-weight:600;color:var(--accent-ink);font-size:12.5px;letter-spacing:.02em;padding-top:1px}
+  .row .v{color:#37342E}
+  .row .v b{color:var(--ink)}
+  .tl .row{border-left:2px solid var(--line);padding-left:18px;margin-left:2px}
+  .tl .k{color:var(--ink);font-weight:700;font-size:13.5px}
+  .tl .k .now{color:var(--accent);font-weight:600}
+  .edu{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+  .edu h4{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin:0 0 12px;font-weight:600}
+  .edu ul{margin:0;padding:0;list-style:none;display:grid;gap:9px;font-size:14px}
+  .edu li{color:#37342E}
+  .edu li b{color:var(--ink)}
+  .edu .date{font-family:var(--mono);color:var(--faint);font-size:12px;margin-left:2px}
+
+  .closer{padding:44px 0 62px;border-top:1px solid var(--line)}
+  .closer blockquote{margin:0;font-size:19px;font-weight:600;letter-spacing:-.01em;color:var(--ink);max-width:66ch;line-height:1.5}
+
+  .picks{margin-top:15px;display:grid;gap:8px}
+  .picks-h{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);margin-bottom:3px}
+  .pick{font-size:13.5px;color:#37342E;padding-left:13px;border-left:2px solid #E7C1A8;line-height:1.55}
+  .pick b{color:var(--ink)}
+  .impact{margin-top:12px;font-size:13px;color:var(--accent-ink);font-weight:600}
+
+  @media (max-width:640px){
+    .cards{grid-template-columns:1fr}
+    .skills{grid-template-columns:1fr}
+    .skills dt{margin-top:8px}
+    .row{grid-template-columns:1fr;gap:3px}
+    .edu{grid-template-columns:1fr}
+    .hero h1{font-size:28px}
+  }
+
+  @media print{
+    :root{--paper:#fff}
+    body{font-size:11.5pt}
+    .hint{display:none !important}
+    .wrap{max-width:none;padding:0}
+    *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    section,.hero{padding:16px 0}
+    .proj,.card{break-inside:avoid}
+    section{break-inside:avoid-page}
+    .cards{grid-template-columns:repeat(3,1fr)}
+    a{border:none}
+    @page{margin:13mm 15mm}
+  }
+</style>
+
+<div class="hint">💡 공개 제출용 포트폴리오입니다. <b>Cmd/Ctrl + P → “PDF로 저장”</b> 하면 PDF로 저장할 수 있어요. (저장 옵션에서 <b>배경 그래픽 켜기</b>)</div>
+
+<div class="wrap">
+
+  <header class="hero">
+    <div class="coord">
+      <span>B2B IoT 서비스 기업 · 재직 중</span>
+      <span>서버 <b>·</b> 네트워크 <b>·</b> 배포</span>
+      <span>Java · Spring · Netty</span>
     </div>
-    
-    <footer>
-        <p>&copy; 2024 포트폴리오. 모든 권리 보유.</p>
-    </footer>
-</body>
-</html>
+    <h1>백엔드 엔지니어</h1>
+    <div class="hlsub">운영 중 터지는 문제를 끝까지 파고들어 고칩니다</div>
+    <div class="role">다수의 장비가 동시에 접속하는 실시간 서버에서 서버·네트워크 쪽을 주로 다루고, 새 기능 개발부터 운영 배포까지 합니다.</div>
+    <p class="lead">
+      백엔드에서 <b>서버와 네트워크 통신</b>을 주로 맡고 있습니다. 여러 장비가 한꺼번에 붙는 환경이라,
+      <b>한 곳이 막혀도 전체가 멈추지 않게</b> 만드는 게 중요합니다.
+      운영 중 생기는 연결 관리나 동시성 문제는 로그와 코드로 원인을 찾아 고치고, 새 기능은 설계부터 배포까지 직접 만듭니다.
+    </p>
+    <div class="meta">
+      <span class="chip k">Java 17 · Spring Boot</span>
+      <span class="chip k">Netty</span>
+      <span class="chip">Vue</span>
+      <span class="chip">AWS · Docker · CI/CD · 자동화</span>
+      <span class="chip mono"><a href="https://github.com/subinan" style="border:none;color:inherit">GitHub</a></span>
+    </div>
+    <p class="gloss"><b>도메인 용어</b> 현장 서버 = 고객 환경에 설치되는 온프레미스 서버 · 장비 단말 = 서비스와 연동되는 IoT/출입/표시 장치 · 규격서 = 기기 연동 프로토콜 문서</p>
+  </header>
+
+  <!-- 01 -->
+  <section>
+    <div class="sec-label"><span class="no">01</span><h2>핵심 역량</h2><span class="rule"></span></div>
+    <div class="cards" style="grid-template-columns:repeat(2,1fr)">
+      <div class="card"><div class="num">서버 구조·성능 개선</div><div class="cap">복잡하게 얽힌 코드와 중복을 정리하고, 느렸던 <b>외부 통신 방식을 바꿔</b> 더 빠르게 처리하도록 개선</div></div>
+      <div class="card"><div class="num">실시간 네트워크 통신</div><div class="cap">다수의 기기와 <b>실시간으로 데이터를 주고받는</b> 서버 통신을 다룸</div></div>
+      <div class="card"><div class="num">장애에 안 멈추는 서버</div><div class="cap">외부 장비 하나가 멈춰도 <b>서버 전체가 안 느려지게</b> 자동으로 차단하고, 연결이 새는 문제를 막음</div></div>
+      <div class="card"><div class="num">새 기능 개발 (0→1)</div><div class="cap">기획된 기능을 <b>설계부터 만들어 실제 서비스에 배포까지</b></div></div>
+    </div>
+  </section>
+
+  <!-- 02 -->
+  <section>
+    <div class="sec-label"><span class="no">02</span><h2>경력 · B2B IoT 서비스 기업</h2><span class="rule"></span></div>
+    <div class="rows tl">
+      <div class="row"><div class="k">입사 초기</div><div class="v"><b>업로드 게이트웨이, 외부 장비 연동</b><br>사용자가 올린 파일을 외부 처리 서버와 장비 단말로 중계하는 게이트웨이를 만들었고, 외부 장비 간 연동 기능 개발을 시작했습니다.</div></div>
+      <div class="row"><div class="k">이후</div><div class="v"><b>새 기능 개발</b><br>외부 이벤트를 감지해 알림을 보내는 기능을 새로 만들었고, 관리자 모니터 프론트(Vue)도 함께 개발했습니다.</div></div>
+      <div class="row"><div class="k">현재</div><div class="v"><b>서버 안정화 · 검증 · 배포</b><br>모니터 화면을 고도화하고, 실시간 서버의 통신·안정화, 규격 검증, 배포 자동화·버전 관리를 하고 있습니다.</div></div>
+    </div>
+  </section>
+
+  <!-- 03 -->
+  <section>
+    <div class="sec-label"><span class="no">03</span><h2>기술 스택</h2><span class="rule"></span></div>
+    <dl class="skills">
+      <div style="display:contents" class="lead-skill"><dt>Backend (주력)</dt><dd>Java 17(Stream·CompletableFuture 비동기), Spring Boot 3.x, MyBatis, 트랜잭션 관리, REST API</dd></div>
+      <dt>실시간 · 통신</dt><dd>Netty 기반 실시간 통신 서버, 연결 관리, 메시지 파싱·검증, 외부 서버 연동, 서킷브레이커·타임아웃</dd>
+      <dt>Linux · 진단</dt><dd>기본 진단 도구로 네트워크·프로세스 상태 기반 문제 분석</dd>
+      <dt>인프라 · 배포</dt><dd>Docker, CI/CD 도구, 배포 자동화, 컨테이너 기반 운영</dd>
+      <dt>Frontend</dt><dd>Vue 3 · Vite — 관리자 모니터 화면(그리드·반응형·대량 작업)</dd>
+      <dt>Data · Cloud</dt><dd>MySQL(인덱스·쿼리 튜닝·파티셔닝), AWS Lambda·Glue·Athena·S3</dd>
+      <dt>기반</dt><dd>정보처리기사 · SQLD · 정보보호 전공, 엔드포인트 DLP 운영</dd>
+    </dl>
+  </section>
+
+  <!-- 04 -->
+  <section>
+    <div class="sec-label"><span class="no">04</span><h2>한 일</h2><span class="rule"></span></div>
+
+    <article class="proj flag">
+      <h3>실시간 서버 리팩토링과 네트워크 통신 안정화</h3>
+      <div class="sub">Java 17 · Netty · 실시간 통신 · 안정화</div>
+      <div class="body">
+        <p>다수의 장비가 붙는 실시간 서버의 통신과 구조를 계속 손봤습니다. 재직하면서 가장 오래 붙잡고 있는, 제가 주도한 작업입니다.</p>
+        <p>얽힌 코드와 중복 로직을 정리했습니다. 길어진 메서드는 책임별로 나누고, 사용하지 않는 코드와 중복을 제거했습니다. 초기화 흐름도 하나로 정리했습니다. 외부 장비로 나가는 XML을 문자열로 조립하던 코드는 타입 모델로 바꿔 오타·누락 위험을 줄였고, 외부 서버와의 통신은 스레드를 오래 붙잡는 동기 방식이라 <strong>비동기로 바꿔 처리량을 늘렸습니다.</strong></p>
+        <p><strong>응답하지 않는 외부 장비 하나가 공용 스레드풀을 장시간 점유하면서, 정상 요청까지 느려지거나 실패하던 문제</strong>가 있었습니다. 무거운 로직·DB 작업을 통신 처리(이벤트 루프)에서 떼어 <strong>전용 실행 그룹</strong>으로 돌리고, 작업 종류별로 풀을 격리했으며, <strong>처리 큐에 상한을 둬 넘치면 거부 로그</strong>를 남기게 했습니다. 문제 장비로 가는 호출은 서킷브레이커로 자동 제한했습니다.</p>
+        <p>특정 이벤트 요청이 몰릴 때 서버 응답이 급락하던 문제도 <strong>내부 HTTP 호출을 비동기로 바꾸고 타임아웃</strong>을 적용해 개선했습니다. 부하 시험에서는 병목이 있던 흐름을 큰 폭으로 끌어올렸습니다.</p>
+        <p><strong>연결 누적 추적 사례 —</strong> 장비가 비정상 종료될 때 소켓 연결이 정상적으로 정리되지 않아 <strong>종료 대기 상태가 누적</strong>되고, 스레드 수·메모리가 함께 늘던 문제가 있었습니다. 네트워크·프로세스 상태와 <strong>스레드 상태를 함께 봐서</strong> 원인을 좁혔습니다. <strong>채널 생명주기 기준으로 종료 처리를 보강</strong>하고 유휴 연결은 자동 정리, 요청마다 ID를 붙여 전 구간을 로그로 추적할 수 있게 했습니다.</p>
+        <div class="picks">
+          <div class="picks-h">선택과 이유</div>
+          <div class="pick"><b>서킷브레이커는 라이브러리 대신 직접 구현</b> — 외부 의존성을 더하지 않고, 장비 식별 단위마다 가볍게 붙는 형태로 기존 스레드풀 구조에 맞췄습니다.</div>
+          <div class="pick"><b>풀은 서버별이 아니라 작업 종류별로 격리</b> — 연동 서버 수만큼 풀을 두면 관리가 안 되므로, 종류별로 나눠 서버가 늘어도 구조가 그대로이게 했습니다.</div>
+          <div class="pick"><b>XML은 문자열 조립 대신 타입 모델</b> — String.format 조립은 오타·누락이 실행 중에야 터져서, 타입으로 바꿔 만드는 단계에서 걸리게 했습니다.</div>
+        </div>
+        <div class="evidence">
+          <div class="cap">측정: 서버에 요청을 한꺼번에 보내 응답 시간과 성공 여부를 확인 · 빠른 요청과 외부 지연이 섞인 느린 요청을 함께 검증 · 제한된 리소스 환경에서 재현</div>
+          <div class="bars">
+            <div>
+              <div class="bar-head"><span class="name">응답 지연 장비가 섞인 부하 · 일반 요청 평균 응답</span><span class="cut">큰 폭 개선</span></div>
+              <div class="track">
+                <div class="barwrap"><div class="b before" style="width:100%"><span class="t">before</span> 초 단위 지연</div></div>
+                <div class="barwrap"><div class="b after" style="width:28%"><span class="t">after</span> 밀리초 단위 응답</div></div>
+              </div>
+            </div>
+            <div>
+              <div class="bar-head"><span class="name">제한된 리소스 상황 · 실패하던 요청을 정상 처리</span><span class="cut">정상화</span></div>
+              <div class="track">
+                <div class="barwrap"><div class="b before" style="width:30%;background:#8C3A32">실패</div></div>
+                <div class="barwrap"><div class="b after" style="width:100%">정상 처리</div></div>
+              </div>
+            </div>
+          </div>
+          <div class="impact">→ 특정 장비가 느려질 때 정상 요청까지 함께 지연되던 현상을 개선했습니다.</div>
+        </div>
+      </div>
+    </article>
+
+    <article class="proj flag">
+      <h3>외부 이벤트 감지·알림 기능 개발 <span style="font-weight:600;font-size:14px;color:var(--faint)">(0→1)</span></h3>
+      <div class="sub">Spring Boot · REST · 외부 관제 서버 연동</div>
+      <div class="body">
+        <p>외부 관제 서버가 보내는 이벤트를 받아 판정하고, 여러 채널로 알림을 보내는 기능을 새로 만들었습니다. <strong>API 설계부터 배포까지 백엔드는 제가 맡았고</strong>, 모바일앱·사내 백오피스·외부 연동사와 인터페이스를 맞췄습니다.</p>
+        <p>설정·문구 관리, 이벤트 조회, 수동·자동 알림, 관리자 대시보드 API를 만들고 관제 서버와 양방향으로 연동했습니다. 이벤트가 발생하면 <strong>모바일앱과 장비 단말로 알림</strong>이 전달되도록 했습니다.</p>
+        <p>연동 서버·모바일앱·관리자 화면이 필요로 하는 API가 서로 달라서, <strong>소비자별로 엔드포인트를 나눠</strong> 한쪽을 고쳐도 다른 쪽에 영향이 가지 않게 했습니다.</p>
+        <div class="tags"><span class="tag">이벤트 처리</span><span class="tag">외부 서버 연동</span><span class="tag">알림</span><span class="tag">관리자 대시보드</span></div>
+      </div>
+    </article>
+
+    <article class="proj">
+      <h3>대용량 조회 성능 최적화 (DB)</h3>
+      <div class="sub">MariaDB · MySQL · 파티셔닝 · 인덱스 · 쿼리 튜닝</div>
+      <div class="body">
+        <p>데이터가 크게 누적되면서 조회 지연이 발생했습니다. 실행 계획(EXPLAIN)으로 느린 쿼리를 짚고, 누적 데이터 테이블은 <strong>파티셔닝 + 인덱스 재설계</strong>, 이력 조회 테이블은 <strong>페이징 조회</strong>로 바꿨습니다.</p>
+        <p>‘쿼리는 빠른데 API는 느린’ 경우도 있어서, SQL 실행 시간만 보지 않고 <strong>커넥션 풀(HikariCP) 대기·DB 응답 전송 지연까지 나눠서</strong> 병목이 어디인지 확인했습니다.</p>
+        <p>주요 조회 API는 초 단위 지연에서 밀리초 단위 응답으로 개선했고, 불필요한 응답 필드를 줄여 전송 데이터 크기도 크게 낮췄습니다.</p>
+        <div class="impact">→ 운영 환경과 유사한 누적 데이터 기준으로 측정한 결과입니다.</div>
+      </div>
+    </article>
+
+    <article class="proj">
+      <h3>파일 업로드 중계 게이트웨이</h3>
+      <div class="sub">Spring Boot · HTTP multipart · 외부 처리 서버 연동 · Redis</div>
+      <div class="body">
+        <p>모바일·웹에서 올린 파일을 <strong>외부 처리 서버와 장비 단말로 중계</strong>하는 게이트웨이를 만들었습니다. 큰 파일을 안정적으로 주고받는 게 관건이었습니다.</p>
+        <p>HTTP multipart로 주고받고, 단말 저장 공간이 부족하면 <strong>잘라서 나눠 보냅니다.</strong> 하루 업로드 용량·개수·크기 제한은 Redis로 관리하고, 전송 이력도 남깁니다.</p>
+      </div>
+    </article>
+
+    <article class="proj">
+      <h3>외부 장비 간 실시간 연동</h3>
+      <div class="sub">Java · Spring Boot · 실시간 이벤트</div>
+      <div class="body">
+        <p>서로 다른 외부 장비가 <strong>상태를 주고받고 특정 동작을 요청</strong>할 수 있도록, 장비 사이를 잇는 연동을 개발했습니다. 호출 값과 이동 상태를 처리하고, 예상치 못한 값이 들어와도 서버가 중단되지 않도록 검증 로직을 보강했습니다.</p>
+      </div>
+    </article>
+
+    <article class="proj">
+      <h3>규격 검증과 코드 정상화</h3>
+      <div class="sub">Java · 계약 테스트 · 규격 대조</div>
+      <div class="body">
+        <p>기존 구현체를 <strong>Java 기반으로 전환하는 과정</strong>에서, 저는 해당 코드를 <strong>기기 연동 프로토콜 문서 기준으로 테스트하고 개선</strong>했습니다.</p>
+        <p>XML 기반 프로토콜 코드를 골든 케이스로 검증하는 테스트를 만들어 빌드·파싱·응답 단계를 확인하고, 모바일 API 여러 도메인의 동작을 표로 정리했습니다. 예시와 정의가 일치하지 않는 부분은 <strong>문서의 정의를 기준으로</strong> 검증하도록 했습니다. 문서와 구현을 자동으로 대조하는 검증기도 프로토타입으로 만들었고, 상태 표시 오작동도 원인을 찾아 개선했습니다.</p>
+      </div>
+    </article>
+
+  </section>
+
+  <!-- 05 운영·배포·보안 -->
+  <section>
+    <div class="sec-label"><span class="no">05</span><h2>운영 · 배포 · 안정성 개선</h2><span class="rule"></span></div>
+    <div class="rows">
+      <div class="row"><div class="k">운영 배포·검증</div><div class="v">IoT 서버 신규 버전을 <b>여러 운영 환경에 적용</b>했습니다. ‘배포 성공’과 ‘서비스 정상 동작’은 다르다는 걸 겪고, 버전 확인·연결 상태·주요 연동 API 점검까지 포함한 <b>배포 검증 절차</b>를 만들었습니다. 배포 자동화 도구를 활용해 대상 환경별 선택 배포와 실패 이력 확인 절차도 정리했습니다.</div></div>
+      <div class="row"><div class="k">장비 상태 동기화 개선</div><div class="v">출입 관련 장비와 서버 간 상태 불일치로 발생한 <b>동기화 문제</b>를 분석하고, 재동기화 절차를 보강해 운영 안정성을 개선했습니다. 서버만이 아니라 장비 담당 조직과 함께 원인을 나누어 확인했습니다.</div></div>
+    </div>
+  </section>
+
+  <!-- 06 그 외 담당 -->
+  <section>
+    <div class="sec-label"><span class="no">06</span><h2>그 외 담당</h2><span class="rule"></span></div>
+    <div class="rows">
+      <div class="row"><div class="k">프론트엔드</div><div class="v">관리자 모니터 화면(Vue)을 개발했습니다 — 대량 작업 안정화, 반응형 레이아웃.</div></div>
+      <div class="row"><div class="k">Data · Cloud</div><div class="v">AWS 서버리스 데이터 파이프라인(Lambda·Glue·Athena·S3)을 이어받아 운영하고 수집 대상을 늘렸습니다.</div></div>
+      <div class="row"><div class="k">엔드포인트 보안</div><div class="v">엔드포인트 보안 솔루션을 운영합니다 — 매체 제어 정책, 차단 로그 확인, 클라이언트 관리.</div></div>
+      <div class="row"><div class="k">인프라</div><div class="v">IoT 서비스 보안 점검 지원, 방화벽 정책 검토, 도메인·인증서 관리, 서버 초기 세팅.</div></div>
+    </div>
+  </section>
+
+  <!-- 06 -->
+  <section>
+    <div class="sec-label"><span class="no">07</span><h2>입사 전 프로젝트 (SSAFY 2023)</h2><span class="rule"></span></div>
+    <div class="rows">
+      <div class="row"><div class="k">OMM</div><div class="v"><b>블록체인(DID) 기반 소개팅 웹</b> · 팀 프로젝트 — DID 오픈소스로 신원 인증서 발급·검증, 일반/관리자 로그인 분기 처리. <a href="https://github.com/subinan/OMM">GitHub</a></div></div>
+      <div class="row"><div class="k">ALARMONY</div><div class="v"><b>그룹 알람 서비스</b> · 팀 프로젝트 — Spring Boot·JPA, FCM 실시간 알림, 공통 예외 처리 구조 설계. <a href="https://github.com/slembers/alarmony">GitHub</a></div></div>
+      <div class="row"><div class="k">STACKERS</div><div class="v"><b>숏폼 합주 소셜 네트워크</b> · 팀 프로젝트 — JWT + Redis 기반 로그인/로그아웃 구현. <a href="https://github.com/subinan/stackers">GitHub</a></div></div>
+    </div>
+  </section>
+
+  <!-- 07 -->
+  <section>
+    <div class="sec-label"><span class="no">08</span><h2>학력 · 자격 · 수상</h2><span class="rule"></span></div>
+    <div class="edu">
+      <div>
+        <h4>학력 · 교육</h4>
+        <ul>
+          <li><b>4년제 대학교</b> 정보보호 관련 전공 <span class="date">졸업</span></li>
+          <li><b>삼성 청년 SW 아카데미(SSAFY)</b> <span class="date">수료</span></li>
+          <li>42 Seoul <span class="date">참여</span></li>
+        </ul>
+      </div>
+      <div>
+        <h4>자격 · 수상</h4>
+        <ul>
+          <li><b>정보처리기사</b> · <b>SQLD</b></li>
+          <li>SSAFY <b>우수 수료</b></li>
+          <li>알고리즘·정보보호 관련 경진대회 수상</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="closer">
+    <blockquote>
+      새 기능을 처음부터 만드는 일과, 돌아가고 있는 서버를 부하 속에서도 안 죽게 다듬는 일을 함께 합니다.
+      잘 재현되지 않는 문제도 로그와 코드로 원인을 찾아 고칩니다.
+    </blockquote>
+  </div>
+
+</div>
